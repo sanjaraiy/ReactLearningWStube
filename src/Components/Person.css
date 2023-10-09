@@ -1,0 +1,9 @@
+.heading{
+     /* border: 1px solid; */
+     display: flex;
+     justify-content: center;
+}
+.heading i{
+     font-size: 30px;
+
+}

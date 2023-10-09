@@ -2,3 +2,15 @@
   background: #96d4dc;
 }
 
+
+.heading1{
+   /* border: 2px solid; */
+   display: flex;
+   justify-content: center;
+   
+}
+.heading1 i{
+  font-size: 40px;
+  font-weight: bold;
+
+}
