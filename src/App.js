@@ -85,30 +85,53 @@ import axios from 'axios';
 class App extends Component{
     constructor(props){
        super(props);
-       this.state={
-        persons:[
-          { name:"WsCube Tech", id:0, age:11},
-          {name:"Sanjay", id:1,  age:21},
-          {name:"Deep", id:2, age:20},
-        ],
-       };
 
+       this.state={
+        persons:[{ name:"WsCube Tech", id:0, age:11},{name:"Sanjay", id:1,  age:21},{name:"Deep", id:2, age:20},],
+        isShow:true,
+        };
+
+       this.toggleHandler=this.toggleHandler.bind(this);
        
-      
+       
+    }
+    
+    toggleHandler() {
+     this.setState({isShow:!this.state.isShow});
+     
     }
    
  render(){
+
+
    let per;
-   per=this.state.persons.map((p,index)=>{
-    //  return <P key={p.id}  name={p.name} age={p.age}></P>
-     return <P key={index}  name={p.name} age={p.age}></P>
-    });
-   
-    console.log(per);
+  //  per=this.state.persons.map((p,index)=>{
+  //   //  return <P key={p.id}  name={p.name} age={p.age}></P>
+  //    return <P key={index}  name={p.name} age={p.age}></P>
+  //   });
+      
+
+
+     {/************* Using if-else condition**************/}
+      if(this.state.isShow){
+        per=this.state.persons.map((p,index)=>{
+             return <P key={index}  name={p.name} age={p.age}></P>
+            });
+      }else{
+         per="";
+      }
+    // console.log(per);
+
+    console.log(this.state.isShow);
 
 
     return (
-       <div className='App'>{per}
+       <div className='App'>
+       <button onClick={this.toggleHandler}>Click Me</button>
+        {per}
+       {/************* Using ternary condition**************/}
+       {/* {this.state.isShow===true? per:""} */}
+ 
             {/* <P name={this.state.persons[0].name} age={this.state.persons[0].age}></P> */}
         </div>
     );
