@@ -5,6 +5,8 @@ import Demo from './Components/Demo';
 import ErrorHandle from './Components/ErrorHandle';
 import React,{ Component } from 'react';
 import axios from 'axios';
+
+
 // function App() {
 
 //   const buttonClickHandler=()=>{
@@ -33,46 +35,82 @@ import axios from 'axios';
 
 // export default App;
 
+
+// class App extends Component{
+//     constructor(props){
+//        super(props);
+//        this.state={
+//          demo:"Testing",
+//        };
+//        this.buttonClickHandler=this.buttonClickHandler.bind(this);
+//     }
+   
+//   buttonClickHandler(){  //here 'this' keyword rebinds so,we can't access 'this.props'
+//     console.log(this.state);
+//   };
+
+//   // buttonClickHandler=()=>{  //here 'this' keyword doesn't rebind so,we can access 'this.props'
+//   //   console.log(this.props);
+//   // };
+
+//   render(){
+//     return (
+//       //  <div className='App'>
+//       //      <P name="WsCube Tech" age="11"></P>
+//       //      <button type="button" onClick={this.buttonClickHandler}>Click Me</button>
+//       //  </div>
+
+//       //**********Event binding*********/
+//       // 1) 
+//       //  <div className='App'>
+//       //      <P name="WsCube Tech" age="11"></P>
+//       //      <button type="button" onClick={()=>this.buttonClickHandler()}>Click Me</button>
+//       //  </div>
+//       // 2)********inline Bind********
+//       //  <div className='App'>
+//       //      <P name="WsCube Tech" age="11"></P>
+//       //      <button type="button" onClick={this.buttonClickHandler.bind(this)}>Click Me</button>
+//       //  </div>
+//       // 2)
+//        <div className='App'>
+//            <P name="WsCube Tech" age="11"></P>
+//            <button type="button" onClick={this.buttonClickHandler} className='btn_css'>Click Me</button>
+//        </div>
+//     );
+//   }
+
+// }
+
+
 class App extends Component{
     constructor(props){
        super(props);
        this.state={
-         demo:"Testing",
+        persons:[
+          { name:"WsCube Tech", id:0, age:11},
+          {name:"Sanjay", id:1,  age:21},
+          {name:"Deep", id:2, age:20},
+        ],
        };
-       this.buttonClickHandler=this.buttonClickHandler.bind(this);
+
+       
+      
     }
    
-  buttonClickHandler(){  //here 'this' keyword rebinds so,we can't access 'this.props'
-    console.log(this.state);
-  };
+ render(){
+   let per;
+   per=this.state.persons.map((p,index)=>{
+    //  return <P key={p.id}  name={p.name} age={p.age}></P>
+     return <P key={index}  name={p.name} age={p.age}></P>
+    });
+   
+    console.log(per);
 
-  // buttonClickHandler=()=>{  //here 'this' keyword doesn't rebind so,we can access 'this.props'
-  //   console.log(this.props);
-  // };
 
-  render(){
     return (
-      //  <div className='App'>
-      //      <P name="WsCube Tech" age="11"></P>
-      //      <button type="button" onClick={this.buttonClickHandler}>Click Me</button>
-      //  </div>
-
-      //**********Event binding*********/
-      // 1) 
-      //  <div className='App'>
-      //      <P name="WsCube Tech" age="11"></P>
-      //      <button type="button" onClick={()=>this.buttonClickHandler()}>Click Me</button>
-      //  </div>
-      // 2)********inline Bind********
-      //  <div className='App'>
-      //      <P name="WsCube Tech" age="11"></P>
-      //      <button type="button" onClick={this.buttonClickHandler.bind(this)}>Click Me</button>
-      //  </div>
-      // 2)
-       <div className='App'>
-           <P name="WsCube Tech" age="11"></P>
-           <button type="button" onClick={this.buttonClickHandler} className='btn_css'>Click Me</button>
-       </div>
+       <div className='App'>{per}
+            {/* <P name={this.state.persons[0].name} age={this.state.persons[0].age}></P> */}
+        </div>
     );
   }
 

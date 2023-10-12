@@ -6,23 +6,23 @@ class Person extends Component{
     constructor(props){
           super(props);
           this.props=props;
-          this.state={
-            name:"John",
-            age:21,
-          };
+          // this.state={
+          //   name:"John",
+          //   age:21,
+          // };
 
     }
       
     nameChangeHandler(){
       console.log(this.state);
           this.setState({name:"Sanjh",age:25},()=>{ 
-            console.log(this.state);
+            // console.log(this.state);
          });
     }
 
     render(){
       
-       console.log(PersonStyle);
+      //  console.log(PersonStyle);
 
       // const style_name={
       //    fontSize:"40px",
@@ -35,11 +35,11 @@ class Person extends Component{
           <>
                 <h3 className={PersonStyle.heading}>
                    {/* <i>Name:{this.props.name},Age:{this.props.age}</i> */}
-                   <i>Dear {this.state.name}, {this.state.age} years, Welcome to WsCubeTech</i>
+                   <i>Dear {this.props.name}, {this.props.age} years, Welcome to WsCubeTech</i>
                    <br/>
 
                    {/* ***********external import CSS************ */}
-                   <button onClick={()=>this.nameChangeHandler()} className={PersonStyle.btn_css}>Click Here</button>
+                   {/* <button onClick={()=>this.nameChangeHandler()} className={PersonStyle.btn_css}>Click Here</button> */}
                  
                    {/* ***********inline object_name CSS************ */}
                    {/* <button onClick={()=>this.nameChangeHandler()} style={style_name}>Click Here</button> */}
