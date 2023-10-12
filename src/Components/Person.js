@@ -1,6 +1,6 @@
 import React,{Component, createElement} from "react";
 import {Man} from "./Man";
-import './Person.css';
+import PersonStyle from './Person.module.css';
 
 class Person extends Component{
     constructor(props){
@@ -21,7 +21,9 @@ class Person extends Component{
     }
 
     render(){
-     
+      
+       console.log(PersonStyle);
+
       // const style_name={
       //    fontSize:"40px",
       //    color:"red",
@@ -31,13 +33,13 @@ class Person extends Component{
 
        return (
           <>
-                <h3 className="heading">
+                <h3 className={PersonStyle.heading}>
                    {/* <i>Name:{this.props.name},Age:{this.props.age}</i> */}
                    <i>Dear {this.state.name}, {this.state.age} years, Welcome to WsCubeTech</i>
                    <br/>
 
                    {/* ***********external import CSS************ */}
-                   <button onClick={()=>this.nameChangeHandler()} className="btn-css">Click Here</button>
+                   <button onClick={()=>this.nameChangeHandler()} className={PersonStyle.btn_css}>Click Here</button>
                  
                    {/* ***********inline object_name CSS************ */}
                    {/* <button onClick={()=>this.nameChangeHandler()} style={style_name}>Click Here</button> */}
