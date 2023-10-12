@@ -11,7 +11,7 @@ class ErrorHandle extends Component{
         }
      }
 
-     render(){
+      render(){
         return (
             <div className="container">
                 <label>Name:</label> 

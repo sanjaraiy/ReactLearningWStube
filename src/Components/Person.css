@@ -5,5 +5,10 @@
 }
 .heading i{
      font-size: 30px;
+     color: blueviolet;
 
+}
+
+.btn-css{
+     font-size: 40px;
 }

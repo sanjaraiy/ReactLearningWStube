@@ -21,14 +21,29 @@ class Person extends Component{
     }
 
     render(){
+     
+      // const style_name={
+      //    fontSize:"40px",
+      //    color:"red",
+      // }
+
     //********1)->JSX **********/
+
        return (
           <>
                 <h3 className="heading">
                    {/* <i>Name:{this.props.name},Age:{this.props.age}</i> */}
                    <i>Dear {this.state.name}, {this.state.age} years, Welcome to WsCubeTech</i>
                    <br/>
-                   <button onClick={()=>this.nameChangeHandler()}>Click Here</button>
+
+                   {/* ***********external import CSS************ */}
+                   <button onClick={()=>this.nameChangeHandler()} className="btn-css">Click Here</button>
+                 
+                   {/* ***********inline object_name CSS************ */}
+                   {/* <button onClick={()=>this.nameChangeHandler()} style={style_name}>Click Here</button> */}
+                   
+                   {/* ***********inline CSS************/ }
+                   {/* <button onClick={()=>this.nameChangeHandler()} style={{fontSize:"50px"}}>Click Here</button> */}
                 </h3>
                 
                 {/* <Man></Man> */}
