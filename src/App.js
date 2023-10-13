@@ -139,12 +139,16 @@ class App extends Component{
     return (
        <div className='App'>
        {/* <button onClick={this.toggleHandler}>Click Me</button> */}
-       <button onClick={this.removeHandler}>Click Me</button>
-        {per}
+       {/* <button onClick={this.removeHandler}>Click Me</button> */}
+        {/* {per} */}
        {/************* Using ternary condition**************/}
        {/* {this.state.isShow===true? per:""} */}
  
             {/* <P name={this.state.persons[0].name} age={this.state.persons[0].age}></P> */}
+        
+            {/**************Handle the form inputs***************/}
+            <Forms></Forms>
+
         </div>
     );
   }
