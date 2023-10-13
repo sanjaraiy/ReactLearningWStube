@@ -14,10 +14,10 @@ class Person extends Component{
     }
       
     nameChangeHandler(){
-      console.log(this.state);
-          this.setState({name:"Sanjh",age:25},()=>{ 
-            // console.log(this.state);
-         });
+      // console.log(this.state);
+      //     this.setState({name:"Sanjh",age:25},()=>{ 
+      //       // console.log(this.state);
+      //    });
     }
 
     render(){
@@ -33,7 +33,8 @@ class Person extends Component{
 
        return (
           <>
-                <h3 className={PersonStyle.heading}>
+                <h3 className={PersonStyle.heading} onClick={this.props.remove}>
+                   {this.props.index}
                    {/* <i>Name:{this.props.name},Age:{this.props.age}</i> */}
                    <i>Dear {this.props.name}, {this.props.age} years, Welcome to WsCubeTech</i>
                    <br/>

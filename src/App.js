@@ -5,6 +5,7 @@ import Demo from './Components/Demo';
 import ErrorHandle from './Components/ErrorHandle';
 import React,{ Component } from 'react';
 import axios from 'axios';
+import Forms from "./Components/Forms";
 
 
 // function App() {
@@ -91,14 +92,24 @@ class App extends Component{
         isShow:true,
         };
 
-       this.toggleHandler=this.toggleHandler.bind(this);
+      //  this.toggleHandler=this.toggleHandler.bind(this);
        
        
     }
     
-    toggleHandler() {
-     this.setState({isShow:!this.state.isShow});
+    // toggleHandler() {
+    //  this.setState({isShow:!this.state.isShow});
      
+    // }
+
+    removeHandler=(personIndex)=>{
+          // alert(personIndex);
+          const personsCopy=this.state.persons;
+          // console.log(persons[personIndex]);
+          // console.log(personsCopy);
+          personsCopy.splice(personIndex,1);
+          // console.log(personsCopy);
+          this.setState({persons:personsCopy})
     }
    
  render(){
@@ -115,19 +126,20 @@ class App extends Component{
      {/************* Using if-else condition**************/}
       if(this.state.isShow){
         per=this.state.persons.map((p,index)=>{
-             return <P key={index}  name={p.name} age={p.age}></P>
+             return <P key={index}  name={p.name} age={p.age} remove={()=>this.removeHandler(index)}></P>
             });
-      }else{
+      }else{ 
          per="";
       }
     // console.log(per);
 
-    console.log(this.state.isShow);
+    // console.log(this.state.isShow);
 
 
     return (
        <div className='App'>
-       <button onClick={this.toggleHandler}>Click Me</button>
+       {/* <button onClick={this.toggleHandler}>Click Me</button> */}
+       <button onClick={this.removeHandler}>Click Me</button>
         {per}
        {/************* Using ternary condition**************/}
        {/* {this.state.isShow===true? per:""} */}
