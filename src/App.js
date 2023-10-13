@@ -6,6 +6,7 @@ import ErrorHandle from './Components/ErrorHandle';
 import React,{ Component } from 'react';
 import axios from 'axios';
 import Forms from "./Components/Forms";
+import ControllerComponent from './Components/ControllerComponent';
 
 
 // function App() {
@@ -146,8 +147,13 @@ class App extends Component{
  
             {/* <P name={this.state.persons[0].name} age={this.state.persons[0].age}></P> */}
         
-            {/**************Handle the form inputs***************/}
-            <Forms></Forms>
+            {/**************Handle the form inputs(without control components)***************/}
+            {/* <Forms></Forms> */}
+
+             {/**************Handle the form inputs (with control components)***************/}
+              <ControllerComponent></ControllerComponent>
+
+
 
         </div>
     );
